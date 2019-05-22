@@ -9,12 +9,19 @@
 
 操作指令非常简单：
 编译：
+
 mkdir build
+
 cd build
+
 cmake ..
+
 make -j
+
 运行（这里假设你还在build文件夹中）:
+
 cd ../
+
 ./bin/linear_triangular ./dataset/1.png ./dataset/2.png 
 
 于是代码便跑起来了。对着图像界面按任意键，跳出匹配结果。
