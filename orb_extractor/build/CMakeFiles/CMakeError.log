@@ -1,0 +1,51 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_52124/fast"
+/usr/bin/make -f CMakeFiles/cmTC_52124.dir/build.make CMakeFiles/cmTC_52124.dir/build
+make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_52124.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_52124.dir/CheckSymbolExists.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_52124
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52124.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_52124.dir/CheckSymbolExists.c.o  -o cmTC_52124 
+CMakeFiles/cmTC_52124.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x1b)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_52124] 错误 1
+make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp'
+make: *** [cmTC_52124/fast] 错误 2
+
+File /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c8f31/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c8f31.dir/build.make CMakeFiles/cmTC_c8f31.dir/build
+make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c8f31.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c8f31.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.11/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c8f31
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8f31.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c8f31.dir/CheckFunctionExists.c.o  -o cmTC_c8f31 -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_c8f31] 错误 1
+make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2/orb_extractor/build/CMakeFiles/CMakeTmp'
+make: *** [cmTC_c8f31/fast] 错误 2
+
+
