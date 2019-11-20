@@ -2,6 +2,7 @@
 
 ## 编译
 1. 先编译DBoW3:
+    
     cd $path/DBoW3
     mkdir build
     cd build
@@ -9,6 +10,7 @@
     make -j8
     非常常规的编译!
 2. 编译源代码
+    
     cd $path/source_code (源代码所在根目录)
     mkdir build
     cd build
@@ -40,5 +42,7 @@
 注: 本模块除了基于词袋模型的匹配方法,还提供了暴力匹配法,该方法是对图像1中的一个描述子在图像2中的所有描述子进行匹配,取相似度分数最高的描述子作为匹配结果,换句话说就是对于图像1中的每一个描述子都能在图像2中找到匹配结果.
 
 ## 参考资料
+
 本模块是C哥为了完善博客而写的,所以本模块对应的博客为[ORB特征匹配](https://www.cnblogs.com/yepeichu/p/10723171.html).欢迎大家批评指正!
+
 C哥邮箱为:peichu.ye@mail2.gdut.edu.cn,欢迎交流!
