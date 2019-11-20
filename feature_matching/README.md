@@ -1,21 +1,19 @@
 # ORB-SLAM2特征匹配
 
 ## 编译
-1. 先编译DBoW3:
-    
-    cd $path/DBoW3
-    mkdir build
-    cd build
-    cmake ..
-    make -j8
+1. 先编译DBoW3:  
+    cd $path/DBoW3  
+    mkdir build  
+    cd build  
+    cmake ..  
+    make -j8  
     非常常规的编译!
-2. 编译源代码
-    
-    cd $path/source_code (源代码所在根目录)
-    mkdir build
-    cd build
-    cmake ..
-    make -j8
+2. 编译源代码  
+    cd $path/source_code (源代码所在根目录)  
+    mkdir build  
+    cd build  
+    cmake ..  
+    make -j8  
 
 ## 运行
     为了方便大家跑起来,C哥写了个bash文件,直接给bash文件加执行权限即可:
