@@ -8,6 +8,7 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib )
 
 find_package( OpenCV 3.0 REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
+
 find_package( PCL REQUIRED )
 include_directories( ${PCL_INCLUDE_DIRS} )
 link_directories( ${PCL_LIBRARY_DIRS} )
