@@ -46,5 +46,5 @@
 
 ## 参考资料
 
-    本模块是C哥为了完善博客而写的,所以本模块对应的博客为[ORB特征匹配](https://www.cnblogs.com/yepeichu/p/10723171.html).欢迎大家批评指正!     
-    C哥邮箱为:peichu.ye@mail2.gdut.edu.cn,欢迎交流!
+ 本模块是C哥为了完善博客而写的,所以本模块对应的博客为[ORB特征匹配](https://www.cnblogs.com/yepeichu/p/10723171.html).欢迎大家批评指正!      
+ C哥邮箱为:peichu.ye@mail2.gdut.edu.cn,欢迎交流!
