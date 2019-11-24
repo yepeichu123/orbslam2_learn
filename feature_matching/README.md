@@ -51,6 +51,18 @@
     6. 在每一对匹配的词汇向量中,两帧图像各自取出在该词汇中的描述子进行计算匹配分数,根据阈值判断匹配程度.
     注: 本模块除了基于词袋模型的匹配方法,还提供了暴力匹配法,该方法是对图像1中的一个描述子在图像2中的所有描述子进行匹配,取相似度分数最高的描述子作为匹配结果,换句话说就是对于图像1中的每一个描述子都能在图像2中找到匹配结果.
 
+## 匹配结果
+
+    1. Kitti数据集两种匹配方式:
+    ![特征点](./result/img_kitti.png);   
+    ![BoW匹配法](./result/bowMatching_kitti.png);   
+    ![暴力匹配法](./result/bfMatching_kitti.png);   
+
+    2. TUM数据集两种匹配方法:
+    ![特征点](./result/img_tum.png);   
+    ![BoW匹配法](./result/bowMatching_tum.png);
+    ![暴力匹配法](./result/bfMatching_tum.png);
+
 ## 参考资料
 
  本模块是C哥为了完善博客而写的,所以本模块对应的博客为[ORB特征匹配](https://www.cnblogs.com/yepeichu/p/10723171.html).欢迎大家批评指正!      
