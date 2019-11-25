@@ -16,6 +16,9 @@ bool XIAOC::MotionEstimate::MotionEstimateByRefFrame(std::vector<cv::Point3d>& r
     cv::Mat R_in, t_in;
     cv::Mat inlier;
     if (ComputePoseByPnp(refP3d, currP2d, R_in, t_in, inlier)) {
+        std::cout << "after pnp, ";
+        ComputeError(refP3d, currP2d, R_in, t_in);
+
         inliers = inlier.clone();
         // 利用g2o优化姿态
         std::vector<cv::Point3d> refP3d_new;
@@ -27,6 +30,8 @@ bool XIAOC::MotionEstimate::MotionEstimateByRefFrame(std::vector<cv::Point3d>& r
         }
         if (OptimizePoseByG2O(refP3d_new, currP2d_new, R_in, t_in, R_out, t_out)) {
             std::cout << "Found the best pose by reference frame!" << std::endl;
+            std::cout << "After g2o, ";
+            ComputeError(refP3d_new, currP2d_new, R_out, t_out);
             return true;
         }
     }
@@ -41,6 +46,8 @@ bool XIAOC::MotionEstimate::MotionEstimateByModel(std::vector<cv::Point3d>& refP
     // 进行非线性优化
     if (OptimizePoseByG2O(refP3d, currP2d, R_in, t_in, R_out, t_out)) {
         std::cout << "Found the best pose by motion model!" << std::endl;
+        std::cout << "After motion model optimization, ";
+        ComputeError(refP3d, currP2d, R_out, t_out);
         return true;
     }
     std::cout << "Cannot find the best pose by motion model!" << std::endl;
@@ -52,6 +59,7 @@ void XIAOC::MotionEstimate::ComputeError(std::vector<cv::Point3d>& refP3d,
     double errTotal = 0;
     double errAvg = 0;
     int count = 0;
+
     for (int i = 0; i < refP3d.size(); ++i) {
         cv::Mat p3d = (cv::Mat_<double>(3,1) << refP3d[i].x, refP3d[i].y, refP3d[i].z);
         cv::Mat p3d_new = R_in * p3d + t_in;
@@ -65,7 +73,7 @@ void XIAOC::MotionEstimate::ComputeError(std::vector<cv::Point3d>& refP3d,
 
             cv::Vec2d p2d(currP2d[i].x, currP2d[i].y);
             errTotal += sqrt( (p2d[0] - p2d_proj[0]) * (p2d[0] - p2d_proj[0]) + 
-                            (p2d[1] - p2d_proj[1]) * (p2d[1] - p2d_proj[1]) );
+                                (p2d[1] - p2d_proj[1]) * (p2d[1] - p2d_proj[1]) );
             ++count;
         }
     }
@@ -83,12 +91,9 @@ bool XIAOC::MotionEstimate::ComputePoseByPnp(std::vector<cv::Point3d>& vp3d, std
 
     cv::Mat rvec, tvec;
     bool flag = cv::solvePnPRansac(vp3d, vp2d, K, cv::Mat(), rvec, tvec, false, 100, 4.0, 0.99, inliers);
-    std::cout << "Inliers = " << inliers.rows << std::endl;
-    // bool flag = cv::solvePnP(vp3d, vp2d, K, cv::Mat(), rvec, tvec, false, 0);
     cv::Rodrigues(rvec, R_out);
     t_out = tvec;
 
-    ComputeError(vp3d, vp2d, R_out, t_out);
     return flag;
 }
 
@@ -133,7 +138,7 @@ bool XIAOC::MotionEstimate::OptimizePoseByG2O(std::vector<cv::Point3d>& refP3d, 
         // 三维点和相机内参
         Eigen::Vector3d p3d(refP3d[i].x, refP3d[i].y, refP3d[i].z);
         EdgeProjectPoseOnly *edgeP = new EdgeProjectPoseOnly(K, p3d);
-        edgeP->setId(i+1);
+        edgeP->setId(i);
         edgeP->setVertex(0, vPose);
         
         // 信息矩阵和观测值
@@ -182,9 +187,6 @@ bool XIAOC::MotionEstimate::OptimizePoseByG2O(std::vector<cv::Point3d>& refP3d, 
                                       R(1,0), R(1,1), R(1,2),
                                       R(2,0), R(2,1), R(2,2));
     t_out = (cv::Mat_<double>(3,1) << t(0,0), t(1,0), t(2,0));
-
-    std::cout << "After g2o optimization!" << std::endl;
-    ComputeError(refP3d, currP2d, R_out, t_out);
 
     return true;
 }
