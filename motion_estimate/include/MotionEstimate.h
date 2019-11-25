@@ -42,28 +42,27 @@ namespace XIAOC {
         ~MotionEstimate() {}
 
         // 基于参考帧的运动估计
-        bool MotionEstimateByRefFrame(std::vector<cv::Point3f>& refP3d, 
-            std::vector<cv::Point2f>& currP2d, cv::Mat& R, cv::Mat& t);
+        bool MotionEstimateByRefFrame(std::vector<cv::Point3d>& refP3d, std::vector<cv::Point2d>& currP2d, 
+            cv::Mat& R, cv::Mat& t, cv::Mat& inliers);
 
         // 基于运动模型的运动估计
-        bool MotionEstimateByModel(std::vector<cv::Point3f>& refP3d, std::vector<cv::Point2f>& currP2d, 
+        bool MotionEstimateByModel(std::vector<cv::Point3d>& refP3d, std::vector<cv::Point2d>& currP2d, 
             cv::Mat& R_in, cv::Mat& t_in, cv::Mat& R_out, cv::Mat& t_out);
 
-        void ComputeError(std::vector<cv::Point3f>& refP3d, 
-            std::vector<cv::Point2f>& currP2d, cv::Mat& R_in, cv::Mat& t_in);
+        void ComputeError(std::vector<cv::Point3d>& refP3d, 
+            std::vector<cv::Point2d>& currP2d, cv::Mat& R_in, cv::Mat& t_in);
 
     private:
         // 调用opencv的pnp求解初值
-        bool ComputePoseByPnp(std::vector<cv::Point3f>& vp3d, std::vector<cv::Point2f>& vp2d, 
-            cv::Mat& R_out, cv::Mat& t_out);
+        bool ComputePoseByPnp(std::vector<cv::Point3d>& vp3d, std::vector<cv::Point2d>& vp2d, 
+            cv::Mat& R_out, cv::Mat& t_out, cv::Mat& inliers);
 
         // 利用g2o优化相机姿态
-        bool OptimizePoseByG2O(std::vector<cv::Point3f>& refP3d, std::vector<cv::Point2f>& currP2d,
+        bool OptimizePoseByG2O(std::vector<cv::Point3d>& refP3d, std::vector<cv::Point2d>& currP2d,
             cv::Mat& R_in, cv::Mat& t_in, cv::Mat& R_out, cv::Mat& t_out);
 
         // 相机内参
-        float mFx_, mFy_;
-        float mCx_, mCy_;
+        double mFx_, mFy_, mCx_, mCy_;
 
     };
 }

@@ -19,14 +19,14 @@ XIAOC::Frame::Frame(int id, cv::Mat& rgbImg, cv::Mat& depthImg,
 
 // 设置相机内参数
 void XIAOC::Frame::SetCameraIntrinsic(cv::Mat& K) {
-    mFx_ = K.at<float>(0,0);
-    mFy_ = K.at<float>(1,1);
-    mCx_ = K.at<float>(0,2);
-    mCy_ = K.at<float>(1,2);
+    mFx_ = K.at<double>(0,0);
+    mFy_ = K.at<double>(1,1);
+    mCx_ = K.at<double>(0,2);
+    mCy_ = K.at<double>(1,2);
 }
 
-void XIAOC::Frame::SetCameraIntrinsic(const float& fx, const float fy, 
-    const float& cx, const float& cy) {
+void XIAOC::Frame::SetCameraIntrinsic(const double& fx, const double& fy, 
+    const double& cx, const double& cy) {
     mFx_ = fx;
     mFy_ = fy;
     mCx_ = cx;
@@ -90,36 +90,27 @@ void XIAOC::Frame::ComputePoint3d(std::vector<cv::DMatch>& matches, bool queryId
 */
 
 // 获取点的深度值
-float XIAOC::Frame::GetPointDepth(float u, float v) {
-    float factor = 5000.0;
+double XIAOC::Frame::GetPointDepth(double u, double v) {
+    double factor = 5000.0;
 
-    ushort d = mImgDepth_.ptr<ushort>(int(v))[int(u)];
-    if (d == 0) 
-        return 0;
-    
-    return (float)d / factor;
-    /*    
-    int count = 0;
-    float d_total = 0;
-    
-    int u1 = std::ceil(u), v1 = std::ceil(v);
-    float d = mImgDepth_.at<float>(v1, u1);
-    if (d > 0) { d_total += d; ++count; }
-
-    u1 = std::ceil(u); v1 = std::floor(v);
-    d = mImgDepth_.at<float>(v1, u1);
-    if (d > 0) { d_total += d; ++count; }
-
-    u1 = std::floor(u); v1 = std::ceil(v);
-    d = mImgDepth_.at<float>(v1, u1);
-    if (d > 0) { d_total += d; ++count; }
-
-    u1 = std::floor(u); v1 = std::floor(v);
-    d = mImgDepth_.at<float>(v1, u1);
-    if (d > 0) { d_total += d; ++count; }
-
-    if (count > 0)
-        return d_total/(count*factor);
-    else 
-        return 0.;*/
+    int x = std::floor(u);
+    int y = std::floor(v);
+    ushort d = mImgDepth_.ptr<ushort>(y)[x];
+    if (d != 0) {
+        return double(d)/factor;
+    }
+    else {
+        // check the nearby points 
+        int dx[4] = {-1,0,1,0};
+        int dy[4] = {0,-1,0,1};
+        for ( int i=0; i<4; i++ )
+        {
+            d = mImgDepth_.ptr<ushort>( y+dy[i] )[x+dx[i]];
+            if ( d!=0 )
+            {
+                return double(d)/factor;
+            }
+        }
+    }
+    return -1.0;
 }

@@ -80,6 +80,9 @@ namespace XIAOC {
         // 计算重投影误差
         virtual void computeError() override;
 
+    public:
+        bool depthValid = true;
+
     private:
         // 参考帧的三维点
         Vec3 pr_;

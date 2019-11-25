@@ -2,21 +2,30 @@
 
 // 默认构造函数
 XIAOC::MotionEstimate::MotionEstimate(cv::Mat& K) {
-    mFx_ = K.at<float>(0, 0);
-    mFy_ = K.at<float>(1, 1);
-    mCx_ = K.at<float>(0, 2);
-    mCy_ = K.at<float>(1, 2);
+    mFx_ = K.at<double>(0, 0);
+    mFy_ = K.at<double>(1, 1);
+    mCx_ = K.at<double>(0, 2);
+    mCy_ = K.at<double>(1, 2);
 }
 
 // 基于参考帧的运动估计
-bool XIAOC::MotionEstimate::MotionEstimateByRefFrame(std::vector<cv::Point3f>& refP3d, 
-            std::vector<cv::Point2f>& currP2d, cv::Mat& R_out, cv::Mat& t_out) {
+bool XIAOC::MotionEstimate::MotionEstimateByRefFrame(std::vector<cv::Point3d>& refP3d,std::vector<cv::Point2d>& currP2d, 
+            cv::Mat& R_out, cv::Mat& t_out, cv::Mat& inliers) {
     std::cout << "Enter MotionEstimate by Reference frame!" << std::endl;
     // 利用opencv提供的pnp函数计算姿态初值
     cv::Mat R_in, t_in;
-    if (ComputePoseByPnp(refP3d, currP2d, R_in, t_in)) {
+    cv::Mat inlier;
+    if (ComputePoseByPnp(refP3d, currP2d, R_in, t_in, inlier)) {
+        inliers = inlier.clone();
         // 利用g2o优化姿态
-        if (OptimizePoseByG2O(refP3d, currP2d, R_in, t_in, R_out, t_out)) {
+        std::vector<cv::Point3d> refP3d_new;
+        std::vector<cv::Point2d> currP2d_new;
+        for (int i = 0; i < inliers.rows; ++i) {
+            int idx = inliers.at<int>(i, 0);
+            refP3d_new.push_back(refP3d[idx]);
+            currP2d_new.push_back(currP2d[idx]);
+        }
+        if (OptimizePoseByG2O(refP3d_new, currP2d_new, R_in, t_in, R_out, t_out)) {
             std::cout << "Found the best pose by reference frame!" << std::endl;
             return true;
         }
@@ -26,7 +35,7 @@ bool XIAOC::MotionEstimate::MotionEstimateByRefFrame(std::vector<cv::Point3f>& r
 }
 
 // 基于运动模型的运动估计
-bool XIAOC::MotionEstimate::MotionEstimateByModel(std::vector<cv::Point3f>& refP3d, std::vector<cv::Point2f>& currP2d, 
+bool XIAOC::MotionEstimate::MotionEstimateByModel(std::vector<cv::Point3d>& refP3d, std::vector<cv::Point2d>& currP2d, 
             cv::Mat& R_in, cv::Mat& t_in, cv::Mat& R_out, cv::Mat& t_out) {
     std::cout << "Enter MotionEstimate by motion model!" << std::endl;
     // 进行非线性优化
@@ -38,8 +47,8 @@ bool XIAOC::MotionEstimate::MotionEstimateByModel(std::vector<cv::Point3f>& refP
     return false;
 }
 
-void XIAOC::MotionEstimate::ComputeError(std::vector<cv::Point3f>& refP3d, 
-            std::vector<cv::Point2f>& currP2d, cv::Mat& R_in, cv::Mat& t_in) {
+void XIAOC::MotionEstimate::ComputeError(std::vector<cv::Point3d>& refP3d, 
+            std::vector<cv::Point2d>& currP2d, cv::Mat& R_in, cv::Mat& t_in) {
     double errTotal = 0;
     double errAvg = 0;
     int count = 0;
@@ -47,14 +56,14 @@ void XIAOC::MotionEstimate::ComputeError(std::vector<cv::Point3f>& refP3d,
         cv::Mat p3d = (cv::Mat_<double>(3,1) << refP3d[i].x, refP3d[i].y, refP3d[i].z);
         cv::Mat p3d_new = R_in * p3d + t_in;
         // project
-        cv::Vec3f p3d_trans(p3d_new.at<double>(0,0), p3d_new.at<double>(1,0), p3d_new.at<double>(2,0));
-        cv::Vec2f p2d_proj;
+        cv::Vec3d p3d_trans(p3d_new.at<double>(0,0), p3d_new.at<double>(1,0), p3d_new.at<double>(2,0));
+        cv::Vec2d p2d_proj;
         if (p3d_trans[2] > 0) {
             p3d_trans /= p3d_trans[2];
             p2d_proj[0] = (mFx_ * p3d_new.at<double>(0,0) + mCx_);
             p2d_proj[1] = (mFy_ * p3d_new.at<double>(1,0) + mCy_);
 
-            cv::Vec2f p2d(currP2d[i].x, currP2d[i].y);
+            cv::Vec2d p2d(currP2d[i].x, currP2d[i].y);
             errTotal += sqrt( (p2d[0] - p2d_proj[0]) * (p2d[0] - p2d_proj[0]) + 
                             (p2d[1] - p2d_proj[1]) * (p2d[1] - p2d_proj[1]) );
             ++count;
@@ -64,18 +73,17 @@ void XIAOC::MotionEstimate::ComputeError(std::vector<cv::Point3f>& refP3d,
     std::cout << "Average error is " << errAvg << std::endl;
 }
 
-
 // 调用opencv的pnp求解初值
-bool XIAOC::MotionEstimate::ComputePoseByPnp(std::vector<cv::Point3f>& vp3d, std::vector<cv::Point2f>& vp2d, 
-    cv::Mat& R_out, cv::Mat& t_out) {
+bool XIAOC::MotionEstimate::ComputePoseByPnp(std::vector<cv::Point3d>& vp3d, std::vector<cv::Point2d>& vp2d, 
+    cv::Mat& R_out, cv::Mat& t_out, cv::Mat& inliers) {
 
     cv::Mat K = (cv::Mat_<double>(3,3) << mFx_, 0, mCx_,
                                           0, mFy_, mCy_,
                                           0, 0, 1);
 
     cv::Mat rvec, tvec;
-    cv::Mat inliers;
-    bool flag = cv::solvePnPRansac(vp3d, vp2d, K, cv::Mat(), rvec, tvec, false, 100, 2.0, 0.99, inliers);
+    bool flag = cv::solvePnPRansac(vp3d, vp2d, K, cv::Mat(), rvec, tvec, false, 100, 4.0, 0.99, inliers);
+    std::cout << "Inliers = " << inliers.rows << std::endl;
     // bool flag = cv::solvePnP(vp3d, vp2d, K, cv::Mat(), rvec, tvec, false, 0);
     cv::Rodrigues(rvec, R_out);
     t_out = tvec;
@@ -85,7 +93,7 @@ bool XIAOC::MotionEstimate::ComputePoseByPnp(std::vector<cv::Point3f>& vp3d, std
 }
 
 // 利用g2o优化相机姿态
-bool XIAOC::MotionEstimate::OptimizePoseByG2O(std::vector<cv::Point3f>& refP3d, std::vector<cv::Point2f>& currP2d, 
+bool XIAOC::MotionEstimate::OptimizePoseByG2O(std::vector<cv::Point3d>& refP3d, std::vector<cv::Point2d>& currP2d, 
     cv::Mat& R_in, cv::Mat& t_in, cv::Mat& R_out, cv::Mat& t_out) {
     
     Eigen::Matrix3d esti_R;
@@ -119,7 +127,7 @@ bool XIAOC::MotionEstimate::OptimizePoseByG2O(std::vector<cv::Point3f>& refP3d, 
                                           0, 0, 1);
 
     // 构建边
-    const float delta = sqrt(7.815);   // 5.991 7.815
+    const double delta = sqrt(5.991);   // 5.991 7.815
     std::vector<EdgeProjectPoseOnly *> edgeProj;
     for (int i = 0; i < refP3d.size(); ++i) {
         // 三维点和相机内参
@@ -157,6 +165,7 @@ bool XIAOC::MotionEstimate::OptimizePoseByG2O(std::vector<cv::Point3f>& refP3d, 
         }
     }
     
+    std::cout << "inliers are " << inliers << ", outliers are " << outliers << std::endl;
     // 内点数量太少
     if (inliers < 10) {
         return false;

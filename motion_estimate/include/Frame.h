@@ -29,8 +29,8 @@ namespace XIAOC {
         // 设置相机内参数
         void SetCameraIntrinsic(cv::Mat& K);
 
-        void SetCameraIntrinsic(const float& fx, const float fy, 
-            const float& cx, const float& cy);
+        void SetCameraIntrinsic(const double& fx, const double& fy, 
+            const double& cx, const double& cy);
 
         // 设置图像
         void SetImg(cv::Mat& rgbImg, cv::Mat& depthImg);
@@ -50,7 +50,7 @@ namespace XIAOC {
         // }
 
         // 获取点的深度值
-        float GetPointDepth(float u, float v);
+        double GetPointDepth(double u, double v);
 
         // 获取所有描述子
         cv::Mat GetAllDescriptors() {
@@ -95,8 +95,7 @@ namespace XIAOC {
         // std::vector<XIAOC::MyPoint3d> mvMP3d_;
 
         // 相机内参数
-        float mFx_, mFy_;
-        float mCx_, mCy_;
+        double mFx_, mFy_, mCx_, mCy_;
     };
 }
 

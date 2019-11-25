@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
     }
 
     // 相机内参数
-    Mat K = ( Mat_<float>(3,3) << 517.3, 0, 318.6, 0, 516.5, 255.3, 0, 0, 1 );
+    Mat K = ( Mat_<double>(3,3) << 517.3, 0, 318.6, 0, 516.5, 255.3, 0, 0, 1 );
 
     // 读取图像
     vector<Mat> rgb_img;
@@ -70,28 +70,32 @@ int main(int argc, char** argv) {
     waitKey(1);
 
     // 计算参考帧(图像1)的三维点以及当前帧的图像像素点
-    vector<Point3f> vp3d;
-    vector<Point2f> vp2d;
+    vector<Point3d> vp3d;
+    vector<Point2d> vp2d;
     for (int i = 0; i < matches.size(); ++i) {
         KeyPoint pr = vframe[0].GetKeyPoint(matches[i].queryIdx);
         KeyPoint pc = vframe[1].GetKeyPoint(matches[i].trainIdx);
         // 获取参考帧点的深度值
-        float u = pr.pt.x, v = pr.pt.y;
-        float d = vframe[0].GetPointDepth(u, v);
+        double u = pr.pt.x, v = pr.pt.y;
+        double d = vframe[0].GetPointDepth(u, v);
         if (d > 0) {
-            float x = (u - K.at<float>(0,2)) * d / K.at<float>(0,0);
-            float y = (v - K.at<float>(1,2)) * d / K.at<float>(1,1);
-            Point3f p3d(x, y, d);
-            Point2f p2d(pc.pt.x, pc.pt.y);
+            double x = (u - K.at<double>(0,2)) * d / K.at<double>(0,0);
+            double y = (v - K.at<double>(1,2)) * d / K.at<double>(1,1);
+            Point3d p3d(x, y, d);
+            Point2d p2d(pc.pt.x, pc.pt.y);
             vp3d.push_back(p3d);
             vp2d.push_back(p2d);
         } 
     }
+    cout << "matching pairs are " << vp3d.size() << endl;
 
     shared_ptr<MotionEstimate> motionEsti = make_shared<MotionEstimate>(K);
     // 基于参考帧的运动估计
+    // Mat R_0W = Mat::eye(3,3,CV_64F);
+    // Mat t_0W = (Mat_<double>(3,1) << 0, 0, 0);
     Mat R_10, t_10;
-    motionEsti->MotionEstimateByRefFrame(vp3d, vp2d, R_10, t_10);
+    Mat inliers;
+    motionEsti->MotionEstimateByRefFrame(vp3d, vp2d, R_10, t_10, inliers);
 
 
     /*************************基于运动模型的运动估计***********************************/
@@ -112,13 +116,13 @@ int main(int argc, char** argv) {
         KeyPoint pr = vframe[1].GetKeyPoint(matches[i].queryIdx);
         KeyPoint pc = vframe[2].GetKeyPoint(matches[i].trainIdx);
         // 获取参考帧点的深度值
-        float u = pr.pt.x, v = pr.pt.y;
-        float d = vframe[1].GetPointDepth(u, v);
+        double u = pr.pt.x, v = pr.pt.y;
+        double d = vframe[1].GetPointDepth(u, v);
         if (d > 0) {
-            float x = (u - K.at<float>(0,2)) * d / K.at<float>(0,0);
-            float y = (v - K.at<float>(1,2)) * d / K.at<float>(1,1);
-            Point3f p3d(x, y, d);
-            Point2f p2d(pc.pt.x, pc.pt.y);
+            double x = (u - K.at<double>(0,2)) * d / K.at<double>(0,0);
+            double y = (v - K.at<double>(1,2)) * d / K.at<double>(1,1);
+            Point3d p3d(x, y, d);
+            Point2d p2d(pc.pt.x, pc.pt.y);
             vp3d.push_back(p3d);
             vp2d.push_back(p2d);
         } 
@@ -163,6 +167,7 @@ int FeatureMatching(Mat desp1, Mat desp2, vector<DMatch>& good_matches) {
     // 计算图像1和图像2间的特征匹配
     bfmatch->match(desp1, desp2, matches);
 
+    good_matches.clear();
     // 找最好的匹配对
     double d_min = min_element(matches.begin(), matches.end(), 
         [](DMatch& m1, DMatch& m2) { return m1.distance < m2.distance; })->distance;
