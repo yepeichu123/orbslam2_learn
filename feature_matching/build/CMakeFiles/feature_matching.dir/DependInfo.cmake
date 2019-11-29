@@ -14,8 +14,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../thirdparty"
   "../thirdparty/DBoW3"
-  "/opt/ros/indigo/include/opencv-3.1.0-dev/opencv"
-  "/opt/ros/indigo/include/opencv-3.1.0-dev"
+  "/usr/local/include"
+  "/usr/local/include/opencv"
   )
 
 # Targets to which this target links.

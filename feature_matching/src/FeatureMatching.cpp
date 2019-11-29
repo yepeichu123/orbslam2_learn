@@ -149,6 +149,70 @@ bool XIAOC::FeatureMatching::MatchByDBoW( cv::Mat& desp1, cv::Mat& desp2, std::v
     return matches.size() > 0 ? true : false;
 }
 
+// 利用投影法进行特征匹配
+bool XIAOC::FeatureMatching::MatchByProject( std::vector<cv::Point3d>& vp3d1, cv::Mat& desp1, 
+    std::vector<cv::Point2d>& vp2d2, cv::Mat& desp2, double& radian, 
+    cv::Mat& K, cv::Mat& R, cv::Mat& t, std::vector<cv::DMatch>& matches ) {
+
+    matches.clear();
+
+    // 将参考帧中的三维点投影到当前帧中查找合适的匹配点
+    for (int i = 0; i < vp3d1.size(); ++i) {
+        cv::Mat p3d = (cv::Mat_<double>(3,1) << vp3d1[i].x, vp3d1[i].y, vp3d1[i].z);
+        cv::Mat p3d_trans = R*p3d + t;
+        p3d_trans /= p3d_trans.at<double>(2,0);
+        double u = K.at<double>(0,0)*p3d_trans.at<double>(0,0) + K.at<double>(0,2);
+        double v = K.at<double>(1,1)*p3d_trans.at<double>(1,0) + K.at<double>(1,2);
+        if (u < 0 || u > K.at<double>(0,2) || v < 0 || v > K.at<double>(1,2)) {
+            continue;
+        }
+        // 在匹配半径中查找合适的匹配候选点
+        std::vector<cv::Mat> desp_temp;
+        std::vector<int> desp_index;
+        for (int j = 0; j < vp2d2.size(); ++j) {
+            cv::Point2d p2d = vp2d2[j];
+            // u-radian < x < u+radian
+            // v-radian < y < v+radian
+            if ( (u-radian) < p2d.x && (u+radian) > p2d.x &&
+                    (v-radian) < p2d.y && (v+radian) > p2d.y) {
+                desp_temp.push_back(desp2.row(j));
+                desp_index.push_back(j);
+            }
+        }
+
+        // 在候选描述子中找到最合适的匹配点
+        cv::Mat d1 = desp1.row(i);
+        int min_dist = 256;
+        int sec_min_dist = 256;
+        int best_id = -1;
+        for (int k = 0; k < desp_temp.size(); ++k) {
+            cv::Mat d2 = desp2.row(desp_index[k]);
+            int dist = ComputeMatchingScore(d1, d2);
+            if (dist < min_dist) {
+                sec_min_dist = min_dist;
+                min_dist = dist;
+                best_id = desp_index[k];
+            }
+            else if (dist < sec_min_dist) {
+                sec_min_dist = dist;
+            }
+        }
+
+        // 利用阈值条件筛选
+        if (min_dist < mTh_) {
+            if (min_dist < mNNRatio_*sec_min_dist) {
+                cv::DMatch m1;
+                m1.queryIdx = i;
+                m1.trainIdx = best_id;
+                m1.distance = min_dist;
+                matches.push_back(m1);
+            }
+        }
+    }
+
+    return matches.size() > 0;
+}
+
 // 设置bow匹配的阈值条件
 void XIAOC::FeatureMatching::SetThreshold( int threshold, float nn_ratio ) {
     mTh_ = threshold;

@@ -1,1 +1,1 @@
-./bin/feature_matching ./vocab/orbvoc.dbow3 ./dataset/3.png ./dataset/4.png
+./bin/feature_matching ./vocab/orbvoc.dbow3 ./dataset/rgb/1.png ./dataset/depth/1.png ./dataset/rgb/2.png

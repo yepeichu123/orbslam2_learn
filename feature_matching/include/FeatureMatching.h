@@ -34,6 +34,11 @@ namespace XIAOC {
         // 利用基于词袋模型的方法进行特征匹配
         bool MatchByDBoW( cv::Mat& desp1, cv::Mat& desp2, std::vector<cv::DMatch>& matches );
 
+        // 利用投影法进行特征匹配
+        bool MatchByProject( std::vector<cv::Point3d>& vp3d1, cv::Mat& desp1, 
+            std::vector<cv::Point2d>& vp2d2, cv::Mat& desp2, double& radian, 
+            cv::Mat& K, cv::Mat& R, cv::Mat& t, std::vector<cv::DMatch>& matches );
+
         // 设置bow匹配的阈值条件
         void SetThreshold( int threshold, float nnratio );
 

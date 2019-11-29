@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/xiaoc/xiaoC/xiaoC/slam/c
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ad2ca/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ad2ca.dir/build.make CMakeFiles/cmTC_ad2ca.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c94a8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c94a8.dir/build.make CMakeFiles/cmTC_c94a8.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ad2ca.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_ad2ca.dir/testCCompiler.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_ad2ca
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad2ca.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ad2ca.dir/testCCompiler.c.o  -o cmTC_ad2ca 
+Building C object CMakeFiles/cmTC_c94a8.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c94a8.dir/testCCompiler.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_c94a8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c94a8.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c94a8.dir/testCCompiler.c.o  -o cmTC_c94a8 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_451c1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_451c1.dir/build.make CMakeFiles/cmTC_451c1.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_13f92/fast"
+/usr/bin/make -f CMakeFiles/cmTC_13f92.dir/build.make CMakeFiles/cmTC_13f92.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.11/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_451c1
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_451c1.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o  -o cmTC_451c1 
+Building C object CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.11/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_13f92
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13f92.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o  -o cmTC_13f92 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -59,8 +59,8 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_451c1' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_451c1 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_13f92' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_13f92 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -68,14 +68,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_451c1/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_451c1.dir/build.make CMakeFiles/cmTC_451c1.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_13f92/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_13f92.dir/build.make CMakeFiles/cmTC_13f92.dir/build]
   ignore line: [make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.11/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_451c1]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_451c1.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o  -o cmTC_451c1 ]
+  ignore line: [Building C object CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.11/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_13f92]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13f92.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o  -o cmTC_13f92 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -85,8 +85,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_451c1' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_451c1 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_13f92' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_13f92 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -100,7 +100,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_451c1] ==> ignore
+    arg [cmTC_13f92] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -112,7 +112,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_451c1.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_13f92.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -142,14 +142,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_46747/fast"
-/usr/bin/make -f CMakeFiles/cmTC_46747.dir/build.make CMakeFiles/cmTC_46747.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_50e7f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_50e7f.dir/build.make CMakeFiles/cmTC_50e7f.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_46747.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_46747.dir/feature_tests.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_46747
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46747.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_46747.dir/feature_tests.c.o  -o cmTC_46747 
+Building C object CMakeFiles/cmTC_50e7f.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_50e7f.dir/feature_tests.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_50e7f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50e7f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_50e7f.dir/feature_tests.c.o  -o cmTC_50e7f 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -162,14 +162,14 @@ make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xi
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_86caa/fast"
-/usr/bin/make -f CMakeFiles/cmTC_86caa.dir/build.make CMakeFiles/cmTC_86caa.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8c5ec/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8c5ec.dir/build.make CMakeFiles/cmTC_8c5ec.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_86caa.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_86caa.dir/feature_tests.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_86caa
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86caa.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_86caa.dir/feature_tests.c.o  -o cmTC_86caa 
+Building C object CMakeFiles/cmTC_8c5ec.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_8c5ec.dir/feature_tests.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_8c5ec
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c5ec.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8c5ec.dir/feature_tests.c.o  -o cmTC_8c5ec 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -182,14 +182,14 @@ make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xi
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1d2ff/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1d2ff.dir/build.make CMakeFiles/cmTC_1d2ff.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_455fb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_455fb.dir/build.make CMakeFiles/cmTC_455fb.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1d2ff.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_1d2ff.dir/feature_tests.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1d2ff
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d2ff.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1d2ff.dir/feature_tests.c.o  -o cmTC_1d2ff 
+Building C object CMakeFiles/cmTC_455fb.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_455fb.dir/feature_tests.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_455fb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_455fb.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_455fb.dir/feature_tests.c.o  -o cmTC_455fb 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -200,28 +200,28 @@ make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xi
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b5367/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b5367.dir/build.make CMakeFiles/cmTC_b5367.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_15498/fast"
+/usr/bin/make -f CMakeFiles/cmTC_15498.dir/build.make CMakeFiles/cmTC_15498.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b5367.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_b5367.dir/testCXXCompiler.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_b5367
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5367.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b5367.dir/testCXXCompiler.cxx.o  -o cmTC_b5367 
+Building CXX object CMakeFiles/cmTC_15498.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_15498.dir/testCXXCompiler.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_15498
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15498.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_15498.dir/testCXXCompiler.cxx.o  -o cmTC_15498 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7762f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7762f.dir/build.make CMakeFiles/cmTC_7762f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c1b9f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c1b9f.dir/build.make CMakeFiles/cmTC_c1b9f.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.11/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_7762f
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7762f.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_7762f 
+Building CXX object CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.11/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_c1b9f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1b9f.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_c1b9f 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -231,8 +231,8 @@ Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_7762f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7762f /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_c1b9f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_c1b9f /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -240,14 +240,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7762f/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7762f.dir/build.make CMakeFiles/cmTC_7762f.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_c1b9f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_c1b9f.dir/build.make CMakeFiles/cmTC_c1b9f.dir/build]
   ignore line: [make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.11/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_7762f]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7762f.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_7762f ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.11/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_c1b9f]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1b9f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_c1b9f ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -257,8 +257,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_7762f' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7762f /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_c1b9f' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_c1b9f /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -272,7 +272,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7762f] ==> ignore
+    arg [cmTC_c1b9f] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -284,7 +284,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTC_7762f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_c1b9f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -312,14 +312,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1y] compiler features compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b9c89/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b9c89.dir/build.make CMakeFiles/cmTC_b9c89.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_38893/fast"
+/usr/bin/make -f CMakeFiles/cmTC_38893.dir/build.make CMakeFiles/cmTC_38893.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b9c89.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1y -o CMakeFiles/cmTC_b9c89.dir/feature_tests.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_b9c89
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9c89.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b9c89.dir/feature_tests.cxx.o  -o cmTC_b9c89 
+Building CXX object CMakeFiles/cmTC_38893.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1y -o CMakeFiles/cmTC_38893.dir/feature_tests.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_38893
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38893.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_38893.dir/feature_tests.cxx.o  -o cmTC_38893 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -385,14 +385,14 @@ make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xi
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ab10f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ab10f.dir/build.make CMakeFiles/cmTC_ab10f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_4af40/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4af40.dir/build.make CMakeFiles/cmTC_4af40.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ab10f.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_ab10f.dir/feature_tests.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ab10f
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab10f.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ab10f.dir/feature_tests.cxx.o  -o cmTC_ab10f 
+Building CXX object CMakeFiles/cmTC_4af40.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_4af40.dir/feature_tests.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_4af40
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4af40.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_4af40.dir/feature_tests.cxx.o  -o cmTC_4af40 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -458,14 +458,14 @@ make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xi
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c31f9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c31f9.dir/build.make CMakeFiles/cmTC_c31f9.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_4c5fc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4c5fc.dir/build.make CMakeFiles/cmTC_4c5fc.dir/build
 make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c31f9.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_c31f9.dir/feature_tests.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_c31f9
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c31f9.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_c31f9.dir/feature_tests.cxx.o  -o cmTC_c31f9 
+Building CXX object CMakeFiles/cmTC_4c5fc.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_4c5fc.dir/feature_tests.cxx.o -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_4c5fc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c5fc.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_4c5fc.dir/feature_tests.cxx.o  -o cmTC_4c5fc 
 make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
 
 
@@ -526,3 +526,31 @@ make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xi
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_26b6b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_26b6b.dir/build.make CMakeFiles/cmTC_26b6b.dir/build
+make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26b6b.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_26b6b.dir/CheckIncludeFile.c.o   -c /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_26b6b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26b6b.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_26b6b.dir/CheckIncludeFile.c.o  -o cmTC_26b6b 
+make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6a857/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6a857.dir/build.make CMakeFiles/cmTC_6a857.dir/build
+make[1]: 正在进入目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6a857.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_6a857.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.11/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6a857
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a857.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_6a857.dir/CheckFunctionExists.c.o  -o cmTC_6a857 -lpthread 
+make[1]:正在离开目录 `/media/xiaoc/1a547b1b-53f2-4460-b122-de4c512a4ae2/xiaoc/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/build/CMakeFiles/CMakeTmp'
+
+

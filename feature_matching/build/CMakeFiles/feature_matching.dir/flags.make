@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/include -I/home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/thirdparty -I/home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/thirdparty/DBoW3 -isystem /opt/ros/indigo/include/opencv-3.1.0-dev/opencv -isystem /opt/ros/indigo/include/opencv-3.1.0-dev 
+CXX_INCLUDES = -I/home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/include -I/home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/thirdparty -I/home/xiaoc/xiaoC/xiaoC/slam/code/blog/orbslam2_learn/feature_matching/thirdparty/DBoW3 -isystem /usr/local/include -isystem /usr/local/include/opencv 
 
